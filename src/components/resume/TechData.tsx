@@ -7,7 +7,7 @@ interface DataProps {
   };
 }
 
-const TechData = ({ data: { name, value } }: DataProps) => {
+const TechData = ({ data: { name } }: DataProps) => {
   return (
     <li className="relative">
       {/* <Progress
