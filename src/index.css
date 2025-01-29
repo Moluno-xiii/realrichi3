@@ -1,17 +1,5 @@
 @import "tailwindcss";
 
-.big {
-  font-size: 200px;
-}
-
-.favicon-circular {
-  border-radius: 50%;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 @theme {
   --font-poppins: Poppins, sans-serif;
   --color-primary: "#00cc99";
@@ -27,6 +15,23 @@ html {
   --color-pink: #f06292;
   --color-random: #00cc99;
 }
+
+.big {
+  font-size: 200px;
+}
+
+.favicon-circular {
+  border-radius: 50%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
 @keyframes scaleAnimation {
   0% {
     transform: scale(1);

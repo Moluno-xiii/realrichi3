@@ -15,7 +15,7 @@ const socialLinks = [
     icon: <FaLinkedinIn size={24} />,
   },
   {
-    link: "https:/@medium.com/@molunorichie",
+    link: "https://medium.com/@molunorichie",
     icon: <BsMedium size={24} />,
   },
 ];

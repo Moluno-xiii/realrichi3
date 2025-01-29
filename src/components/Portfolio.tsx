@@ -2,11 +2,12 @@ import SquareSpinner from "./ui/SquareSpinner";
 import { contributionsData, portfolioData } from "..";
 import { LuExternalLink } from "react-icons/lu";
 import { useModalContext } from "../context/ModalContext";
+import Modal from "./ui/Modal";
 
 const Portfolio: React.FC = () => {
   return (
     <div id="portfolio" className="bg-dark-gray py-10 md:py-20">
-      <div className="mx-auto flex max-w-3xl flex-col gap-y-36 px-3 lg:max-w-[1170px] lg:px-10">
+      <div className="relative mx-auto flex max-w-3xl flex-col gap-y-36 px-3 lg:max-w-[1170px] lg:px-10">
         {/* abstract this to one component */}
         <div id="opensource">
           <p className="relative mb-10 text-4xl font-bold text-white capitalize">
@@ -87,34 +88,46 @@ interface PropTypes {
     imageUrl: string;
     title: string;
     subTitle: string;
+    modalData: {
+      category: string;
+      date: string;
+      technology: string;
+      productLink?: string;
+      githubLink?: string;
+      description: {
+        main: string;
+        paragraphs?: string[];
+      };
+    };
   };
 }
 
 const OpenSourceProject = ({ data }: PropTypes) => {
-  const { handleModal, isModalOpen } = useModalContext();
+  const { handleModal, isModalOpen, currentlyOpenModal } = useModalContext();
   const { imageUrl, title, subTitle } = data;
 
   return (
-    <li
-      className="relative max-h-[400px] cursor-pointer text-white/70 backdrop-blur-lg"
-      onClick={() => handleModal(true)}
-    >
-      <div className="h-full">
-        <img src={imageUrl} alt="project image" className="h-full" />
-      </div>
-      <span className="absolute top-20 left-5 bg-black/30 px-4 py-2 text-xl font-medium capitalize">
-        {title}
-      </span>
-      <span className="absolute right-0 bottom-10 bg-black/20 px-3 py-1 capitalize">
-        {subTitle}
-      </span>
-      <LuExternalLink
-        color="[#00cc99]"
-        size={25}
-        className="absolute bottom-5 left-5"
-      />
-
-      {isModalOpen && <span>modal is open</span>}
-    </li>
+    <>
+      <li
+        className="relative max-h-[400px] cursor-pointer text-white/70 backdrop-blur-lg"
+        onClick={() => handleModal(true, title)}
+      >
+        <div className="h-full">
+          <img src={imageUrl} alt="project image" className="h-full" />
+        </div>
+        <span className="absolute top-20 left-5 bg-black/30 px-4 py-2 text-xl font-medium capitalize">
+          {title}
+        </span>
+        <span className="absolute right-0 bottom-10 bg-black/20 px-3 py-1 capitalize">
+          {subTitle}
+        </span>
+        <LuExternalLink
+          color="[#00cc99]"
+          size={25}
+          className="absolute bottom-5 left-5"
+        />
+      </li>
+      {isModalOpen && title === currentlyOpenModal && <Modal data={data} />}
+    </>
   );
 };

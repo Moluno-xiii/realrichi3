@@ -18,6 +18,7 @@ const contributionsData = [
         ],
       },
     },
+    modalNumber: 1,
   },
   {
     title: "JSquarto",
@@ -39,6 +40,7 @@ const contributionsData = [
         ],
       },
     },
+    modalNumber: 2,
   },
   {
     title: "Open life science (Saudi Arabia)",
@@ -61,6 +63,7 @@ const contributionsData = [
         ],
       },
     },
+    modalNumber: 3,
   },
   {
     title: "Action crowdin contributors",
@@ -79,6 +82,7 @@ const contributionsData = [
         ],
       },
     },
+    modalNumber: 4,
   },
 ];
 
@@ -119,6 +123,7 @@ const portfolioData = [
         ],
       },
     },
+    modalNumber: 5,
   },
   {
     title: "Veridux Pay",
@@ -165,6 +170,7 @@ const portfolioData = [
         ],
       },
     },
+    modalNumber: 2,
   },
   {
     title: "SwiftVia",
@@ -193,6 +199,7 @@ const portfolioData = [
         ],
       },
     },
+    modalNumber: 3,
   },
   {
     title: "BlackAt",
@@ -218,6 +225,7 @@ const portfolioData = [
         ],
       },
     },
+    modalNumber: 4,
   },
   {
     title: "Open innovation lab",
@@ -257,6 +265,7 @@ const portfolioData = [
         ],
       },
     },
+    modalNumber: 5,
   },
   {
     title: "Cruise (Ride-hailing API)",
@@ -514,7 +523,7 @@ const blogsData = [
   },
   {
     imageUrl: "/akudam.png",
-    title: "Desgn of Movie streaming page",
+    title: "Design of Movie streaming page",
     date: "April 5, 2022",
     link: "https://medium.com/@molunorichie/create-a-movie-streaming-web-page-html-and-css-5bbd236a4e81",
     paragraph:
