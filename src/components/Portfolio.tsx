@@ -1,19 +1,19 @@
-import SquareSpinner from './SquareSpinner';
-import { contributionsData, portfolioData } from '..';
-import { LuExternalLink } from 'react-icons/lu';
-import { useState } from 'react';
+import SquareSpinner from "./ui/SquareSpinner";
+import { contributionsData, portfolioData } from "..";
+import { LuExternalLink } from "react-icons/lu";
+import { useModalContext } from "../context/ModalContext";
 
 const Portfolio: React.FC = () => {
   return (
     <div id="portfolio" className="bg-dark-gray py-10 md:py-20">
-      <div className="mx-auto flex max-w-2xl flex-col gap-y-36 px-3 lg:max-w-[1170px] lg:px-10">
+      <div className="mx-auto flex max-w-3xl flex-col gap-y-36 px-3 lg:max-w-[1170px] lg:px-10">
         {/* abstract this to one component */}
         <div id="opensource">
-          <p className="relative mb-10 text-4xl font-bold capitalize text-white">
-            opensource contri<span className="text-green">butions</span>
+          <p className="relative mb-10 text-4xl font-bold text-white capitalize">
+            opensource contri<span className="text-[#00cc99]">butions</span>
             <SquareSpinner />
           </p>
-          <div className="flex flex-col justify-center gap-y-10 text-text-dark">
+          <div className="text-text-dark flex flex-col justify-center gap-y-10">
             <span>
               Open source contributions have been an integral part of my journey
               as a software developer. I firmly believe in the power of
@@ -28,7 +28,7 @@ const Portfolio: React.FC = () => {
             </span>
 
             <div className="flex flex-col gap-y-10">
-              <button className="w-fit cursor-pointer place-self-center border-b-2 border-b-green bg-zinc-600 px-4 py-2 text-white transition-all duration-200 hover:text-black">
+              <button className="w-fit cursor-pointer place-self-center border-b-2 border-b-[#00cc99] bg-zinc-600 px-4 py-2 text-white transition-all duration-200 hover:text-black">
                 All
               </button>
 
@@ -45,11 +45,11 @@ const Portfolio: React.FC = () => {
         </div>
 
         <div id="portfolio">
-          <p className="relative mb-10 text-4xl font-bold capitalize text-white">
-            portfol<span className="text-green">io</span>
+          <p className="relative mb-10 text-4xl font-bold text-white capitalize">
+            portfol<span className="text-[#00cc99]">io</span>
             <SquareSpinner />
           </p>
-          <div className="flex flex-col justify-center gap-y-10 text-text-dark">
+          <div className="text-text-dark flex flex-col justify-center gap-y-10">
             <span>
               Throughout my journey, I&apos;ve worked on a variety of projects,
               both individually and as part of collaborative teams. These
@@ -60,7 +60,7 @@ const Portfolio: React.FC = () => {
             </span>
 
             <div className="flex flex-col gap-y-10">
-              <button className="w-fit cursor-pointer place-self-center border-b-2 border-b-green bg-zinc-600 px-4 py-2 text-white transition-all duration-200 hover:text-black">
+              <button className="w-fit cursor-pointer place-self-center border-b-2 border-b-[#00cc99] bg-zinc-600 px-4 py-2 text-white transition-all duration-200 hover:text-black">
                 All
               </button>
 
@@ -91,32 +91,25 @@ interface PropTypes {
 }
 
 const OpenSourceProject = ({ data }: PropTypes) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { handleModal, isModalOpen } = useModalContext();
   const { imageUrl, title, subTitle } = data;
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-  // const handleCloseModal = () => {
-  //   setIsModalOpen(false)
-  // }
   return (
     <li
-      className="relative max-h-[400px] cursor-pointer text-black backdrop-blur-lg"
-      onClick={handleOpenModal}
+      className="relative max-h-[400px] cursor-pointer text-white/70 backdrop-blur-lg"
+      onClick={() => handleModal(true)}
     >
-      {/* <div className="h-full bg-black bg-opacity-10"></div> */}
       <div className="h-full">
         <img src={imageUrl} alt="project image" className="h-full" />
       </div>
-      <span className="absolute left-5 top-20 bg-black bg-opacity-30 px-4 py-2 text-xl font-medium capitalize">
+      <span className="absolute top-20 left-5 bg-black/30 px-4 py-2 text-xl font-medium capitalize">
         {title}
       </span>
-      <span className="absolute bottom-10 right-0 bg-black bg-opacity-20 px-3 py-1 capitalize">
+      <span className="absolute right-0 bottom-10 bg-black/20 px-3 py-1 capitalize">
         {subTitle}
       </span>
       <LuExternalLink
-        color="green"
+        color="[#00cc99]"
         size={25}
         className="absolute bottom-5 left-5"
       />

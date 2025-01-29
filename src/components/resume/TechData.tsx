@@ -1,4 +1,4 @@
-// import { Progress } from '@nextui-org/react';
+import ProgressBar from "../ui/ProgressBar";
 
 interface DataProps {
   data: {
@@ -7,18 +7,14 @@ interface DataProps {
   };
 }
 
-const TechData = ({ data: { name } }: DataProps) => {
+const TechData = ({ data: { name, value } }: DataProps) => {
   return (
-    <li className="relative">
-      {/* <Progress
-        aria-label={name}
-        className="text-black"
-        value={value}
-        size="sm"
-        showValueLabel={true}
-        color={'success'}
-      /> */}
-      <span className="absolute top-0 right-2">{name}</span>
+    <li className="space-y-2">
+      <div className="flex flex-row justify-between">
+        <span className="">{value}%</span>
+        <span className="">{name}</span>
+      </div>
+      <ProgressBar value={value} />
     </li>
   );
 };

@@ -561,6 +561,29 @@ const blogsData = [
       "A Middleware is a program or software that mediates between applications, programs, tools, databases and networks. It basically functions as a hidden translation layer which enables more efficient communication and data management between applications...",
   },
 ];
+
+// const paletteColors = [
+//   "#4169E1",
+//   "#00CC99",
+//   "#EA4343",
+//   "#D8185C",
+//   "#FFB100",
+//   "#F05A66",
+//   "#66B95C",
+//   "#9161E0",
+//   "F06292",
+// ];
+const paletteColors = [
+  "blue",
+  "green",
+  "orange",
+  "red",
+  "yellow",
+  "light-red",
+  "lemon",
+  "purple",
+  "pink",
+];
 export {
   portfolioData,
   contributionsData,
@@ -570,4 +593,5 @@ export {
   educationData,
   talksData,
   blogsData,
+  paletteColors,
 };

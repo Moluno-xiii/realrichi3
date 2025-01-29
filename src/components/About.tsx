@@ -26,10 +26,11 @@ const details = [
 const About = () => {
   return (
     <div id="about" className="bg-dark-gray px-3 py-20 md:px-10 lg:px-20">
-      <div className="mx-auto max-w-2xl lg:max-w-[1170px]">
+      <div className="mx-auto max-w-3xl lg:max-w-[1170px]">
         <p className="mb-3 text-4xl font-bold text-white max-lg:mb-10">
-          About <span className="text-green">Me</span>
+          About <span className="text-[#00cc99]">Me</span>
         </p>
+
         <div className="text-text-dark flex flex-col justify-between gap-14 lg:flex-row">
           <div className="flex max-w-xl flex-col gap-y-14 xl:max-w-[720px]">
             <span className="">
@@ -58,7 +59,7 @@ const About = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center gap-y-20 md:h-[400px] md:w-[300px]">
-            <div className="border-green hidden h-[400px] w-[300px] border-4 md:absolute md:inline-block"></div>
+            <div className="hidden h-[400px] w-[300px] border-4 border-[#00cc99] md:absolute md:inline-block"></div>
             <img
               src="/profile-pic.jpg"
               alt="profile picture"

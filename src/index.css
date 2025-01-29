@@ -14,7 +14,33 @@ html {
 
 @theme {
   --font-poppins: Poppins, sans-serif;
-  --color-green: #00cc99;
+  --color-primary: "#00cc99";
   --color-dark-gray: #333333;
   --color-text-dark: #dadada;
+  --color-blue: #4169e1;
+  --color-orange: #ea4343;
+  --color-red: #d8185c;
+  --color-yellow: #ffb100;
+  --color-light-red: #f05a66;
+  --color-lemon: #66b95c;
+  --color-purple: #9161e0;
+  --color-pink: #f06292;
+  --color-random: #00cc99;
+}
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.scale-animation {
+  animation: scaleAnimation 2s infinite;
+  display: block;
+  margin: 0 auto;
 }
