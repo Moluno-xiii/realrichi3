@@ -68,7 +68,7 @@ const About = () => {
           </div>
         </div>
         <div className="mt-10 flex flex-col items-center gap-y-5 text-center xl:items-start">
-          <span className="text-5xl font-bold text-white">8+</span>
+          <span className="text-5xl font-bold text-[#00cc99]">8+</span>
           <span className="text-text-dark capitalize">projects done</span>
         </div>
       </div>

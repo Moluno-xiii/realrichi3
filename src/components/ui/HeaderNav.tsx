@@ -4,12 +4,11 @@ import { PiUserCircleThin } from "react-icons/pi";
 import { PiScrollThin } from "react-icons/pi";
 import { VscMail } from "react-icons/vsc";
 import { SlBriefcase } from "react-icons/sl";
-import { FaPalette } from "react-icons/fa";
+// import { FaPalette } from "react-icons/fa";
 import { TiThMenuOutline } from "react-icons/ti";
 import React, { useState } from "react";
 import { LiaTimesSolid } from "react-icons/lia";
-import { usePaletteModalContext } from "../../context/PaletteModalContext";
-import PaletteModal from "./PaletteModal";
+// import { usePaletteModalContext } from "../../context/PaletteModalContext";
 
 const navLinks = [
   {
@@ -48,8 +47,7 @@ const HeaderNav = () => {
     setIsMenuOpen(false);
   };
 
-  const { isPaletteModalOpen, handleOpenPaletteModal } =
-    usePaletteModalContext();
+  // const {isPaletteModalOpen, handleOpenPaletteModal } = usePaletteModalContext();
   return (
     <nav className="sticky top-0 z-20 shadow-sm shadow-[#00cc99]">
       <ul className="relative hidden h-full flex-row items-center justify-center bg-white md:flex">
@@ -59,13 +57,13 @@ const HeaderNav = () => {
       </ul>
       <div className="absolute -top-0 right-0 space-y-10 space-x-10 md:top-[70px]">
         <div className="flex flex-row items-start justify-between gap-x-3">
-          <div
+          {/* <div
             className="cursor-pointer rounded-full bg-[#434343] p-4"
             onClick={handleOpenPaletteModal}
           >
             <FaPalette className="scale-animation size-8 text-[#161616]" />
-          </div>
-          {isPaletteModalOpen && <PaletteModal />}
+          </div> */}
+          {/* {isPaletteModalOpen && <PaletteModal />} */}
         </div>
       </div>
       <div

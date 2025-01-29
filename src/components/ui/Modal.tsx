@@ -15,6 +15,10 @@ interface ModalProps {
       description: {
         main: string;
         paragraphs?: string[];
+        keyFeatures?: {
+          title: string;
+          text: string;
+        }[];
       };
     };
   };
@@ -26,15 +30,11 @@ const Modal: React.FC<ModalProps> = ({ data }) => {
   const { category, date, technology, productLink, githubLink, description } =
     modalData;
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
-      onClick={() => handleModal(false, "null")}
-    >
-      <div className="relative z-50 flex h-full max-h-[90vh] w-full max-w-3xl flex-col gap-y-5 overflow-y-auto rounded-md bg-[#F5F5F5] py-2 text-black drop-shadow-xl md:py-5">
-        {/* <div className="absolute top-0 right-0 left-0 z-50 flex h-screen flex-col gap-y-5 overflow-y-auto rounded-md bg-[#F5F5F5] py-2 text-black md:py-5"> */}
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+      <div className="relative z-50 flex h-full max-h-[90vh] w-full max-w-4xl flex-col gap-y-5 overflow-y-auto rounded-md bg-[#F5F5F5] py-2 text-black drop-shadow-xl md:py-5">
         <div className="border-text-dark flex flex-row items-center justify-between border-b px-2 py-2 md:px-5">
           <span className="text-2xl font-bold text-black">{title}</span>
-          <div className="bg-text-dark hover:bg-text-dark/50 flex flex-row items-center justify-center rounded-full p-3 text-white transition-all duration-300 hover:text-black">
+          <div className="bg-text-dark hover:bg-text-dark/50 flex flex-row items-center justify-center rounded-full p-3 text-white transition-all duration-200 hover:text-black">
             <FaTimes
               size={20}
               className="cursor-pointer"
@@ -67,7 +67,7 @@ const Modal: React.FC<ModalProps> = ({ data }) => {
                 {productLink && (
                   <a
                     href={productLink}
-                    className="hover:text-blue text-xl transition-all duration-300"
+                    className="text-xl transition-all duration-200 hover:text-[#00cc99]"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -77,7 +77,7 @@ const Modal: React.FC<ModalProps> = ({ data }) => {
                 {githubLink && (
                   <a
                     href={githubLink}
-                    className="hover:text-blue transition-all duration-300"
+                    className="transition-all duration-200 hover:text-[#00cc99]"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -92,16 +92,34 @@ const Modal: React.FC<ModalProps> = ({ data }) => {
         <div className="flex flex-col gap-y-6 px-2 md:px-6">
           <span className="text-xl font-bold">Description</span>
           <p className="text-black/40">{description.main}</p>
-          <div>
-            <span className="text-xl font-semibold">Inspiration</span>
-            <ul className="mt-3 flex flex-col gap-y-4">
-              {description.paragraphs?.map((paragraph, index) => (
-                <li key={index} className="text-black/40">
-                  {paragraph}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {description.paragraphs ? (
+            <div>
+              <span className="text-xl font-semibold">Inspiration</span>
+              <ul className="mt-3 flex flex-col gap-y-4">
+                {description.paragraphs?.map((paragraph, index) => (
+                  <li key={index} className="text-black/40">
+                    {paragraph}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <div>
+              <span className="text-xl font-semibold">Key features</span>
+              <ul className="mt-3 flex flex-col gap-y-4">
+                {description.keyFeatures?.map((feature, index) => (
+                  <li key={index} className="text-black/40">
+                    {feature.title && (
+                      <span className="mr-2 font-semibold text-black capitalize">
+                        {index + 1}. {feature.title}:
+                      </span>
+                    )}
+                    {feature.text}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </div>

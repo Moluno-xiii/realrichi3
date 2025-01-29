@@ -13,7 +13,7 @@ const Resume = () => {
   return (
     <div
       id="resume"
-      className="mx-auto my-10 max-w-3xl bg-white px-4 md:my-20 lg:max-w-[1170px]"
+      className="mx-auto my-10 max-w-4xl bg-white px-4 md:my-20 lg:max-w-[1170px]"
     >
       <p className="relative text-4xl font-bold text-black">
         Resu<span className="text-[#00cc99]">me</span>

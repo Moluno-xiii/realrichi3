@@ -7,7 +7,7 @@ import Modal from "./ui/Modal";
 const Portfolio: React.FC = () => {
   return (
     <div id="portfolio" className="bg-dark-gray py-10 md:py-20">
-      <div className="relative mx-auto flex max-w-3xl flex-col gap-y-36 px-3 lg:max-w-[1170px] lg:px-10">
+      <div className="relative mx-auto flex max-w-4xl flex-col gap-y-36 px-3 lg:max-w-[1170px] lg:px-10">
         {/* abstract this to one component */}
         <div id="opensource">
           <p className="relative mb-10 text-4xl font-bold text-white capitalize">

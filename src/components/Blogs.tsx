@@ -4,8 +4,8 @@ import SquareSpinner from "./ui/SquareSpinner";
 const Blogs: React.FC = () => {
   return (
     <div id="blogs" className="bg-white py-10 md:py-20">
-      <div className="mx-auto max-w-3xl px-3 md:px-6 lg:max-w-[1170px]">
-        <p className="relative text-4xl font-bold text-black capitalize">
+      <div className="mx-auto max-w-4xl px-3 md:px-6 lg:max-w-[1170px]">
+        <p className="relative mb-5 text-4xl font-bold text-black capitalize">
           latest <span className="text-[#00cc99]">blogs</span>
           <SquareSpinner />
         </p>
